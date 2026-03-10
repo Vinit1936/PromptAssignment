@@ -1,0 +1,104 @@
+.create {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+.wizard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+.wizard__nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.wizard__body {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+}
+.wizard__step {
+  position: absolute;
+  inset: 0;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.wizard__step.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+.wizard__step.slide-in {
+  transform: translateX(20px);
+}
+.wizard__step.slide-out {
+  transform: translateX(-20px);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.dropzone {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: var(--surface);
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.inline-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: var(--surface);
+}
+
+.chip-toggle {
+  cursor: pointer;
+}
+.chip-toggle.active {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.confetti span {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--accent);
+  animation: confetti 1.2s ease-out forwards;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) rotate(180deg);
+    opacity: 0;
+  }
+}

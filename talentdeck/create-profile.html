@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Profile | TalentDeck</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/dark-mode.css" />
+    <link rel="stylesheet" href="css/pages/create-profile.css" />
+</head>
+
+<body>
+    <div class="navbar-wrapper">
+        <nav class="nav-dock">
+            <a class="nav-brand" href="index.html" aria-label="TalentDeck home">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="24" height="24" rx="8" fill="currentColor" opacity="0.08" />
+                    <path d="M10 22V10h6a4 4 0 1 1 0 8h-4v4z" fill="currentColor" />
+                </svg>
+                <span>TalentDeck</span>
+            </a>
+            <div class="nav-links">
+                <a data-nav-link href="explore.html">Explore</a>
+                <a data-nav-link href="dashboard.html">Dashboard</a>
+                <a data-nav-link href="connections.html">Connections</a>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-button" aria-label="Search"><img src="assets/icons/search.svg" width="18"
+                        height="18" alt="" /></button>
+                <button class="icon-button" aria-label="Notifications"><img src="assets/icons/bell.svg" width="18"
+                        height="18" alt="" /></button>
+                <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme"><span class="sr-only">Toggle
+                        theme</span><img class="theme-toggle__icon theme-toggle__icon--sun" src="assets/icons/sun.svg"
+                        alt="" /><img class="theme-toggle__icon theme-toggle__icon--moon" src="assets/icons/moon.svg"
+                        alt="" /><span class="theme-toggle__thumb"></span></button>
+                <a class="btn btn-primary" href="login.html">Sign In</a>
+            </div>
+        </nav>
+    </div>
+    <div class="mobile-dock">
+        <a class="mobile-dock__item" href="index.html" aria-label="Home"><img src="assets/icons/grid.svg" width="18"
+                height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="explore.html" aria-label="Explore"><img src="assets/icons/search.svg"
+                width="18" height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="dashboard.html" aria-label="Dashboard"><img src="assets/icons/user.svg"
+                width="18" height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="connections.html" aria-label="Connections"><img src="assets/icons/people.svg"
+                width="18" height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="create-profile.html" aria-label="Create profile"><img
+                src="assets/icons/plus.svg" width="18" height="18" alt="" /></a>
+    </div>
+
+    <main class="container create">
+        <div class="wizard card">
+            <div class="wizard__nav">
+                <div class="stepper__item active" data-stepper-item>1</div>
+                <div class="stepper__line" data-stepper-line></div>
+                <div class="stepper__item" data-stepper-item>2</div>
+                <div class="stepper__line" data-stepper-line></div>
+                <div class="stepper__item" data-stepper-item>3</div>
+                <div class="stepper__line" data-stepper-line></div>
+                <div class="stepper__item" data-stepper-item>4</div>
+                <div class="stepper__line" data-stepper-line></div>
+                <div class="stepper__item" data-stepper-item>5</div>
+            </div>
+            <div class="wizard__body">
+                <div class="wizard__step active" data-step>
+                    <h3>Basic Info</h3>
+                    <div class="form-grid" style="margin-top:12px;">
+                        <input class="input" placeholder="Full name" />
+                        <input class="input" placeholder="Professional headline" />
+                        <input class="input" placeholder="Location" />
+                        <textarea class="textarea" rows="3" maxlength="300" placeholder="Short bio"></textarea>
+                        <div class="dropzone">Drag & drop or click to upload photo</div>
+                    </div>
+                </div>
+                <div class="wizard__step" data-step>
+                    <h3>Skills</h3>
+                    <div class="form-grid" style="margin-top:12px;">
+                        <input class="input" placeholder="Current role / title" />
+                        <input class="input" type="number" placeholder="Years of experience" />
+                    </div>
+                    <div class="tag-input" data-tag-input>
+                        <div class="chip">TypeScript</div>
+                        <div data-tags></div>
+                        <input type="text" placeholder="Add skill and press Enter" />
+                    </div>
+                </div>
+                <div class="wizard__step" data-step>
+                    <h3>Experience</h3>
+                    <div class="inline-card">
+                        <div class="form-grid">
+                            <input class="input" placeholder="Company name" />
+                            <input class="input" placeholder="Role title" />
+                            <input class="input" placeholder="Start (MM/YYYY)" />
+                            <input class="input" placeholder="End (MM/YYYY)" />
+                        </div>
+                        <textarea class="textarea" rows="3" placeholder="Description"></textarea>
+                        <div class="flex" style="gap:8px; justify-content:flex-end;"><button
+                                class="btn btn-outline">Cancel</button><button class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                    <div class="list-items">
+                        <div class="inline-card">No experiences added yet.</div>
+                    </div>
+                </div>
+                <div class="wizard__step" data-step>
+                    <h3>Projects</h3>
+                    <div class="inline-card">
+                        <div class="form-grid">
+                            <input class="input" placeholder="Project name" />
+                            <input class="input" placeholder="GitHub URL" />
+                            <input class="input" placeholder="Live URL" />
+                        </div>
+                        <textarea class="textarea" rows="3" placeholder="Description"></textarea>
+                        <div class="tag-input" data-tag-input>
+                            <div data-tags></div>
+                            <input type="text" placeholder="Tech stack tags" />
+                        </div>
+                        <div class="flex" style="gap:8px; justify-content:flex-end;"><button
+                                class="btn btn-outline">Cancel</button><button class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                    <div class="list-items">
+                        <div class="inline-card">No projects added yet.</div>
+                    </div>
+                </div>
+                <div class="wizard__step" data-step>
+                    <h3>Preferences & Publish</h3>
+                    <div class="form-grid" style="margin-top:12px;">
+                        <label class="chip chip-toggle active">Open to opportunities</label>
+                        <div class="chip-grid">
+                            <span class="chip chip-toggle">Full-time</span>
+                            <span class="chip chip-toggle">Part-time</span>
+                            <span class="chip chip-toggle">Contract</span>
+                            <span class="chip chip-toggle">Freelance</span>
+                        </div>
+                        <div class="chip-grid">
+                            <span class="chip chip-toggle">Startup</span>
+                            <span class="chip chip-toggle">Mid-size</span>
+                            <span class="chip chip-toggle">Enterprise</span>
+                            <span class="chip chip-toggle">Remote-first</span>
+                        </div>
+                        <div class="tag-input" data-tag-input>
+                            <div data-tags></div>
+                            <input type="text" placeholder="Preferred roles" />
+                        </div>
+                        <label><input type="checkbox" /> Public profile</label>
+                    </div>
+                    <button class="btn btn-primary" data-publish style="margin-top:12px;">Publish Profile</button>
+                </div>
+            </div>
+            <div class="flex-between" style="margin-top:16px;">
+                <button class="btn btn-outline" data-prev>Back</button>
+                <button class="btn btn-primary" data-next>Next</button>
+            </div>
+            <div class="confetti"></div>
+        </div>
+    </main>
+
+    <script src="js/theme.js" type="module"></script>
+    <script src="js/navbar.js" type="module"></script>
+    <script src="js/navAuth.js" type="module"></script>
+    <script src="js/animations.js" type="module"></script>
+    <script src="js/pages/create-profile.js" type="module"></script>
+</body>
+
+</html>

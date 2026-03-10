@@ -1,0 +1,100 @@
+.connections {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.filter-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.pill.active {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
+}
+
+.connection-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  background: var(--background);
+}
+.connection-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.connection-actions {
+  display: flex;
+  gap: 8px;
+}
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status.pending {
+  background: #fef9c3;
+  color: #854d0e;
+}
+.status.replied {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.status.connected {
+  background: #dcfce7;
+  color: #15803d;
+}
+.status.declined {
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.drawer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 60vh;
+  overflow: auto;
+  margin-bottom: 12px;
+}
+.bubble {
+  padding: 10px 12px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.bubble.me {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
+  align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .connection-card {
+    grid-template-columns: 1fr;
+  }
+}

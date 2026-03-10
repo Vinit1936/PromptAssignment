@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Talent | TalentDeck</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/dark-mode.css" />
+    <link rel="stylesheet" href="css/pages/explore.css" />
+</head>
+
+<body>
+    <div class="navbar-wrapper">
+        <nav class="nav-dock">
+            <a class="nav-brand" href="index.html" aria-label="TalentDeck home">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="24" height="24" rx="8" fill="currentColor" opacity="0.08" />
+                    <path d="M10 22V10h6a4 4 0 1 1 0 8h-4v4z" fill="currentColor" />
+                </svg>
+                <span>TalentDeck</span>
+            </a>
+            <div class="nav-links">
+                <a data-nav-link href="explore.html">Explore</a>
+                <a data-nav-link href="dashboard.html">Dashboard</a>
+                <a data-nav-link href="connections.html">Connections</a>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-button" aria-label="Search"><img src="assets/icons/search.svg" width="18"
+                        height="18" alt="" /></button>
+                <button class="icon-button" aria-label="Notifications"><img src="assets/icons/bell.svg" width="18"
+                        height="18" alt="" /></button>
+                <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme"><span class="sr-only">Toggle
+                        theme</span><img class="theme-toggle__icon theme-toggle__icon--sun" src="assets/icons/sun.svg"
+                        alt="" /><img class="theme-toggle__icon theme-toggle__icon--moon" src="assets/icons/moon.svg"
+                        alt="" /><span class="theme-toggle__thumb"></span></button>
+                <a class="btn btn-primary" href="login.html">Sign In</a>
+            </div>
+        </nav>
+    </div>
+    <div class="mobile-dock">
+        <a class="mobile-dock__item" href="index.html" aria-label="Home"><img src="assets/icons/grid.svg" width="18"
+                height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="explore.html" aria-label="Explore"><img src="assets/icons/search.svg"
+                width="18" height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="dashboard.html" aria-label="Dashboard"><img src="assets/icons/user.svg"
+                width="18" height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="connections.html" aria-label="Connections"><img src="assets/icons/people.svg"
+                width="18" height="18" alt="" /></a>
+        <a class="mobile-dock__item" href="create-profile.html" aria-label="Create profile"><img
+                src="assets/icons/plus.svg" width="18" height="18" alt="" /></a>
+    </div>
+
+    <main class="container">
+        <section class="explore-layout">
+            <aside class="sidebar">
+                <div class="flex-between" style="margin-bottom:12px">
+                    <h3>Filter Talent</h3><button class="btn-ghost" onclick="location.reload()">Reset</button>
+                </div>
+                <div class="filter-group">
+                    <label class="section-label" for="search">Search by name or skill</label>
+                    <input id="search" class="input" type="text" placeholder="Search" data-filter="search" />
+                </div>
+                <div class="filter-group">
+                    <div class="section-label">Role / Title</div>
+                    <div class="flex" style="flex-direction:column; gap:6px;">
+                        <label><input type="checkbox" value="Frontend Dev" data-filter-role /> Frontend Dev</label>
+                        <label><input type="checkbox" value="Backend Dev" data-filter-role /> Backend Dev</label>
+                        <label><input type="checkbox" value="Designer" data-filter-role /> Designer</label>
+                        <label><input type="checkbox" value="PM" data-filter-role /> PM</label>
+                        <label><input type="checkbox" value="Data Scientist" data-filter-role /> Data Scientist</label>
+                        <label><input type="checkbox" value="DevOps" data-filter-role /> DevOps</label>
+                        <label><input type="checkbox" value="Mobile Dev" data-filter-role /> Mobile Dev</label>
+                        <label><input type="checkbox" value="Full Stack" data-filter-role /> Full Stack</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="section-label">Skills</div>
+                    <div class="filter-tags">
+                        <span class="chip" data-filter-skill="React">React</span>
+                        <span class="chip" data-filter-skill="Node.js">Node.js</span>
+                        <span class="chip" data-filter-skill="Python">Python</span>
+                        <span class="chip" data-filter-skill="Figma">Figma</span>
+                        <span class="chip" data-filter-skill="AWS">AWS</span>
+                        <span class="chip" data-filter-skill="TypeScript">TypeScript</span>
+                        <span class="chip" data-filter-skill="Go">Go</span>
+                        <span class="chip" data-filter-skill="Rust">Rust</span>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="section-label">Experience Level</div>
+                    <label><input type="radio" name="experience" value="junior" /> Junior (0-2)</label>
+                    <label><input type="radio" name="experience" value="mid" /> Mid (2-5)</label>
+                    <label><input type="radio" name="experience" value="senior" /> Senior (5-8)</label>
+                    <label><input type="radio" name="experience" value="staff" /> Staff (8+)</label>
+                </div>
+                <div class="filter-group">
+                    <label class="section-label"><input type="checkbox" data-filter="availability" /> Available
+                        Now</label>
+                </div>
+                <div class="filter-group">
+                    <div class="section-label">Location</div>
+                    <input class="input" list="locations" placeholder="City or Remote" data-filter="location" />
+                    <datalist id="locations">
+                        <option value="Remote" />
+                        <option value="Bangalore" />
+                        <option value="Mumbai" />
+                        <option value="Delhi" />
+                        <option value="San Francisco" />
+                        <option value="London" />
+                        <option value="Berlin" />
+                    </datalist>
+                </div>
+                <div class="filter-group">
+                    <div class="section-label">Open to</div>
+                    <label><input type="checkbox" value="full-time" data-filter-open /> Full-time</label>
+                    <label><input type="checkbox" value="part-time" data-filter-open /> Part-time</label>
+                    <label><input type="checkbox" value="contract" data-filter-open /> Contract</label>
+                    <label><input type="checkbox" value="freelance" data-filter-open /> Freelance</label>
+                    <label><input type="checkbox" value="co-founder" data-filter-open /> Co-founder</label>
+                </div>
+            </aside>
+
+            <section>
+                <div class="top-bar">
+                    <div data-count>Showing 0 professionals</div>
+                    <select class="select sort-select" data-sort>
+                        <option value="recent">Most Recent</option>
+                        <option value="views">Most Viewed</option>
+                        <option value="rated">Top Rated</option>
+                    </select>
+                </div>
+                <div class="talent-grid" data-stagger></div>
+                <button class="btn btn-outline load-more" data-load-more>Load more</button>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/theme.js" type="module"></script>
+    <script src="js/navbar.js" type="module"></script>
+    <script src="js/navAuth.js" type="module"></script>
+    <script src="js/animations.js" type="module"></script>
+    <script src="js/pages/explore.js" type="module"></script>
+</body>
+
+</html>
